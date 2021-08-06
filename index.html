@@ -1,0 +1,36 @@
+<!-- Inherit from 'base.html', MUST be in same directory -->
+{% extends "base.html" %}
+
+<head>
+    <style>
+    .camera-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      /* Preserve aspect ratio */
+      min-width: 100%;
+      min-height: 100%;
+
+        /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    </style>
+</head>
+
+
+{% block title %}Gardening Assistant Robot{% endblock %}
+{% block content %}
+<h1>Homepage</h1>
+<body>
+    <div class="main" id="newpost">
+        <img  class="camera-bg" style="width: 50%; height:40%; background-attachment: fixed;" id="bg" class="center" src="{{ url_for('video_feed') }}">
+    </div>
+</body>
+{% endblock %}
